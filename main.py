@@ -34,7 +34,7 @@ def handle_conversation():
 
     message = st.text_area("Message", placeholder="Ask something...")
 
-    if st.button("Run Flow"):
+    if st.button("Chat"):
         if not message.strip():
             st.error("Please enter a message")
             return
@@ -47,7 +47,7 @@ def handle_conversation():
 
             st.markdown(f'<div style="text-align: right; background-color: #5eb1b7; border-radius: 10px; padding: 10px; margin: 5px 0;">You:</br>{prompt}</div>', unsafe_allow_html=True)
             
-            st.markdown(f'<div style="text-align: left; background-color: #f1ab86; border-radius: 10px; padding: 10px; margin: 5px 0;">Chatterbox:</br>{response}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align: left; background-color: #f1ab86; border-radius: 10px; padding: 10px; margin: 5px 0;">Bot:</br>{response}</div>', unsafe_allow_html=True)
 
             context += f"\nUser: {prompt}\nAI: {response}"
             add_to_chat_history(prompt, response)
